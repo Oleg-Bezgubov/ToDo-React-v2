@@ -41,3 +41,16 @@ input[type=text] {
      color: #222222; 
 
 }
+
+.myBtn {
+    margin-left: auto;
+    display: inline-block;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0, .1);
+    cursor: pointer;
+    color: black
+    
+
+}
+
+

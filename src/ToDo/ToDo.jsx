@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ToDoItem from './ToDoItem'
 import cl from './ToDo.module.css'
 
@@ -10,6 +10,21 @@ const ToDo = () => {
         name: 'Купить макбук',
         isChecked: true
     }])
+
+    
+    useEffect(()=> {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
+
+
+    useEffect(()=> {
+        const raw = localStorage.getItem('todos')
+        setTodos(JSON.parse(raw)) //не работает
+    }, [])
+
+
+
+
 
     const onKeyPressNameHandler = e => {
         if(e.key === 'Enter'){
